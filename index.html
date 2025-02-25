@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Visualizer</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Keeps the video in the background */
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: 80vh;
+            z-index: 1; /* Keeps the canvas on top of the video */
+        }
+        audio {
+            position: absolute;
+            bottom: 10px;
+            width: 80%;
+            max-width: 500px;
+            z-index: 2; /* Keeps the audio player above everything */
+        }
+        /* Title styling */
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds shadow to make text pop */
+            z-index: 3; /* Ensures title is on top */
+        }
+    </style>
+</head>
+<body>
+    <!-- Video background -->
+    <video id="background-video" autoplay loop muted playsinline>
+        <source src="videos\street_vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Canvas for the visualizer -->
+    <canvas id="visualizer"></canvas>
+
+    <!-- Audio player -->
+    <audio id="audio" controls>
+        <source src="music\waterjon - 'and1' 160 bpm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Title in the center of the screen -->
+    <div class="title">waterjon</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
