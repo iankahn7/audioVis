@@ -1,4 +1,4 @@
-# 🎵 Music Visualizer — *WaterJon*
+# 🎵 Music Visualizer Made with Javascript
 
 A real-time, interactive **music visualizer** built with the **Web Audio API** and **HTML5 Canvas**. Watch frequency bars and animated visuals react dynamically to your favorite tracks.
 
